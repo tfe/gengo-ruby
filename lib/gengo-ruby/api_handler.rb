@@ -97,7 +97,7 @@ module Gengo
       if is_download_file.nil?
         json = JSON.parse(resp.body)
         if json['opstat'] != 'ok'
-          raise Gengo::Exception.new(json['opstat'], json['err']['code'].to_i, json['err']['msg'])
+          raise Gengo::Exception.new(json['opstat'], json['err']['msg'])
         end
 
         # Return it if there are no problems, nice...
@@ -158,7 +158,7 @@ module Gengo
         json = JSON.parse(resp.body)
 
         if json['opstat'] != 'ok'
-          raise Gengo::Exception.new(json['opstat'], json['err']['code'].to_i, json['err']['msg'])
+          raise Gengo::Exception.new(json['opstat'], json['err']['msg'])
         end
 
         # Return it if there are no problems, nice...
@@ -213,7 +213,7 @@ module Gengo
         json = JSON.parse(resp.body)
 
         if json['opstat'] != 'ok'
-          raise Gengo::Exception.new(json['opstat'], json['err']['code'].to_i, json['err']['msg'])
+          raise Gengo::Exception.new(json['opstat'], json['err']['msg'])
         end
 
         # Return it if there are no problems, nice...
